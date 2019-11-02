@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: blogyg-server-ribbon
+
+server:
+  port: 8333
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8111/eureka/
