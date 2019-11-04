@@ -20,6 +20,7 @@
         <module>blogyg-server-eureka</module>
         <module>blogyg-server-client</module>
         <module>blogyg-server-ribbon</module>
+        <module>blogyg-server-feign</module>
     </modules>
 
     <dependencies>

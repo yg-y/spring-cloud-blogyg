@@ -1,4 +1,4 @@
-package com.blogyg.cloud.ribbon;
+package com.blogyg.cloud.feign;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;

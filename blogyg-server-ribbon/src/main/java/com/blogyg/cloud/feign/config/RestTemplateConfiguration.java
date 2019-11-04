@@ -1,4 +1,4 @@
-package com.blogyg.cloud.ribbon.config;
+package com.blogyg.cloud.feign.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

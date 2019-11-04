@@ -1,4 +1,4 @@
-package com.blogyg.cloud.ribbon;
+package com.blogyg.cloud.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

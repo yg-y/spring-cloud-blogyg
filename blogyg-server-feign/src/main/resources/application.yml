@@ -3,7 +3,7 @@ spring:
     name: blogyg-server-feign
 
 server:
-  port: 8222
+  port: 8555
 
 eureka:
   client:
