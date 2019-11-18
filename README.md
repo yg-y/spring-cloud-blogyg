@@ -6,3 +6,5 @@
 > 服务提供者
 ### blogyg-server-ribbon | blogyg-server-feign
 > 服务消费者/负载均衡
+### blogyg-server-zuul
+> 网关
