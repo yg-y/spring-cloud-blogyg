@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: blogyg-server-zuul
+
+server:
+  port: 8666
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8111/eureka/
+
+zuul:
+  routes:
+    api-r:
+      path: /api/r/**
+      serviceId: blogyg-server-ribbon
+    api-f:
+      path: /api/f/**
+      serviceId: blogyg-server-feign
+    api-c:
+      path: /api/c/**
+      serviceId: blogyg-server-client

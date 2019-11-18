@@ -1,25 +1,25 @@
-spring:
-  application:
-    name: blogyg-server-client
-
-server:
-  port: 8444
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8111/eureka/
-
----
 #spring:
 #  application:
 #    name: blogyg-server-client
 #
 #server:
-#  port: 8333
+#  port: 8444
 #
 #eureka:
 #  client:
 #    serviceUrl:
 #      defaultZone: http://localhost:8111/eureka/
+
+---
+spring:
+  application:
+    name: blogyg-server-client
+
+server:
+  port: 8333
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8111/eureka/
 
