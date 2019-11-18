@@ -6,7 +6,6 @@
         <groupId>com.blogyg.cloud</groupId>
         <artifactId>spring-cloud-blogyg</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <artifactId>blogyg-server-client</artifactId>
