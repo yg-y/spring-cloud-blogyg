@@ -1,6 +1,6 @@
 spring:
   application:
-    name: blogyg-server-feign
+    name: blogyg-server-ribbon
 
 server:
   port: 8222
@@ -8,4 +8,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8111/eureka/
+      defaultZone: http://blogyg:8111/eureka/

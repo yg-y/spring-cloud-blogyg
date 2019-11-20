@@ -7,9 +7,16 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: blogyg
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # 关闭自我保护模式(生产环境不建议关闭)
+    enable-self-preservation: false
+    # 清理无效节点间隔（单位毫秒，默认是60*1000）开发阶段调小
+    eviction-interval-timer-in-ms: 4000
+    renewal-percent-threshold: 0.9
+
