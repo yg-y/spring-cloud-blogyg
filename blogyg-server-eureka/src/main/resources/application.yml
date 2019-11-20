@@ -1,6 +1,8 @@
 spring:
   application:
     name: blogyg-server-eureka
+  zipkin:
+    base-url: http://blogyg:8777
 
 server:
   port: 8111

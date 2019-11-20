@@ -1,6 +1,8 @@
 spring:
   application:
     name: blogyg-server-client
+  zipkin:
+    base-url: http://blogyg:8777
 
 server:
   port: 8444
@@ -14,6 +16,8 @@ eureka:
 #spring:
 #  application:
 #    name: blogyg-server-client
+#  zipkin:
+#    base-url: http://blogyg:8777
 #
 #server:
 #  port: 8333

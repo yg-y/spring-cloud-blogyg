@@ -22,6 +22,7 @@
         <module>blogyg-server-ribbon</module>
         <module>blogyg-server-feign</module>
         <module>blogyg-server-zuul</module>
+        <module>blogyg-server-zipkin</module>
     </modules>
 
     <dependencies>
