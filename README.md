@@ -8,3 +8,5 @@
 > 服务消费者/负载均衡
 ### blogyg-server-zuul
 > 网关
+### blogyg-server-zipkin
+> 链路追踪
