@@ -1,1 +1,26 @@
+server:
+  port: 9001
 
+spring:
+  application:
+    name: blogyg-server-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: glmapper
+        uri: lib://blogyg-server-client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://blogyg:8111/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+    reactor.netty: DEBUG
+
+management.endpoints.web.exposure.include: '*'
