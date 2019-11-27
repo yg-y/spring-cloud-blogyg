@@ -2,15 +2,18 @@ package com.blogyg.cloud.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
 
 @EnableEurekaClient
 @SpringBootApplication
@@ -49,5 +52,35 @@ public class BlogygServerGatewayApplication {
                 .route(r -> r.path("/client/**").uri("lb://blogyg-server-client"))
                 .build();
 
+    }
+
+    /**
+     * ip限流
+     *
+     * @return
+     */
+    @Bean
+    public KeyResolver ipKeyResolver() {
+        return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
+    }
+
+    /**
+     * 接口限流
+     * @return
+     */
+    @Primary
+    @Bean
+    public KeyResolver apiKeyResolver() {
+        return exchange -> Mono.just(exchange.getRequest().getPath().value());
+    }
+
+    /**
+     * 用户限流 此方式访问接口需携带 getFirst("xxxx) 中定义的xxxx
+     * 此处为 userId
+     * @return
+     */
+    @Bean
+    public KeyResolver userKeyResolver() {
+        return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("userId"));
     }
 }

@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: blogyg-server-gateway
+  redis:
+    host: 127.0.0.1
+    port: 6379
   cloud:
     gateway:
       #忽略大小写
@@ -18,6 +21,31 @@ spring:
         #Weight 代表路由分发的权重
         predicates:
           - Path=/**
+        # 限流过滤配置
+        filters:
+        - name: RequestRateLimiter
+          args:
+            #redis-rate-limiter.replenishRate：允许用户每秒处理多少个请求
+            redis-rate-limiter.replenishRate: 90
+            #redis-rate-limiter.burstCapacity：令牌桶的容量，允许在一秒钟内完成的最大请求数
+            redis-rate-limiter.burstCapacity: 90
+            #key-resolver：使用SpEL按名称引用bean
+            key-resolver: "#{@ipKeyResolver}"
+        # 熔断降级配置
+        - name: Hystrix
+          args:
+            name: default
+            fallbackUri: 'forward:/defaultfallback'
+        # hystrix 信号量隔离，6秒后自动超时
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 6000
+  shareSecurityContext: true
 
 eureka:
   client:
