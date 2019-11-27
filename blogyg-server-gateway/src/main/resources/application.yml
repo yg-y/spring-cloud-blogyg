@@ -6,21 +6,20 @@ spring:
     name: blogyg-server-gateway
   cloud:
     gateway:
+      #忽略大小写
+      discovery:
+        locator:
+          lower-case-service-id: true
+      #路由匹配，注意格式缩进，否则会报错
       routes:
-      - id: glmapper
-        uri: lib://blogyg-server-client
+      - id: blogyg-server-client
+        uri: lb://blogyg-server-client
+        #predicates可以指定匹配规则
+        #Weight 代表路由分发的权重
+        predicates:
+          - Path=/**
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://blogyg:8111/eureka/
-
-logging:
-  level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-    reactor.netty: DEBUG
-
-management.endpoints.web.exposure.include: '*'
