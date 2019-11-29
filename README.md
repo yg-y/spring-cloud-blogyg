@@ -1,4 +1,4 @@
-# spring-cloud-demo
+# spring cloud demo
 
 ### blogyg-server-eureka
 > 服务注册及发现模块
