@@ -19,3 +19,7 @@ gateway：
 ```
 ### blogyg-server-zipkin
 > 链路追踪
+
+
+### blogyg-server-monitor
+> 服务监控 spring-boot-admin
