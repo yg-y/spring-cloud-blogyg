@@ -3,6 +3,10 @@ spring:
     name: blogyg-server-client
   zipkin:
     base-url: http://blogyg:8777
+  boot:
+    admin:
+      client:
+        url: http://blogyg:9002
 
 server:
   port: 8444

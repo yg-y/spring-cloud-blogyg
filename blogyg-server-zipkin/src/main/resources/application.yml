@@ -1,7 +1,10 @@
 spring:
   application:
     name: blogyg-server-zipkin
-
+  boot:
+    admin:
+      client:
+        url: http://blogyg:9002
 server:
   port: 8777
 

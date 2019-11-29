@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: blogyg-server-gateway
+  zipkin:
+    base-url: http://blogyg:8777
+  boot:
+    admin:
+      client:
+        url: http://blogyg:9002
   redis:
     host: 127.0.0.1
     port: 6379
@@ -46,6 +52,16 @@ hystrix:
           thread:
             timeoutInMilliseconds: 6000
   shareSecurityContext: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 注意：此处在视频里是 include: ["health", "info"] 但已无效了，请修改
+        include: "*"
 
 eureka:
   client:

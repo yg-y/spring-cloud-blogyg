@@ -24,6 +24,7 @@
         <module>blogyg-server-zuul</module>
         <module>blogyg-server-gateway</module>
         <module>blogyg-server-zipkin</module>
+        <module>blogyg-server-monitor</module>
     </modules>
 
     <dependencies>
