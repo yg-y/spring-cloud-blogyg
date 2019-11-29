@@ -16,13 +16,19 @@ eureka:
     serviceUrl:
       defaultZone: http://blogyg:8111/eureka/
 
+# admin的log选项卡用
+logging:
+  file: /data/logs/crm/${spring.application.name}.log
 ---
 spring:
   application:
     name: blogyg-server-client
   zipkin:
     base-url: http://blogyg:8777
-
+  boot:
+    admin:
+      client:
+        url: http://blogyg:9002
 server:
   port: 8333
 
@@ -31,3 +37,6 @@ eureka:
     serviceUrl:
       defaultZone: http://blogyg:8111/eureka/
 
+# admin的log选项卡用
+logging:
+  file: /data/logs/crm/${spring.application.name}.log
