@@ -53,16 +53,6 @@ hystrix:
             timeoutInMilliseconds: 6000
   shareSecurityContext: true
 
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        # 注意：此处在视频里是 include: ["health", "info"] 但已无效了，请修改
-        include: "*"
-
 eureka:
   client:
     serviceUrl:

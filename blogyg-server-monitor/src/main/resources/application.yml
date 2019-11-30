@@ -14,7 +14,6 @@ management:
   endpoints:
     web:
       exposure:
-        # 注意：此处在视频里是 include: ["health", "info"] 但已无效了，请修改
         include: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
 
 
