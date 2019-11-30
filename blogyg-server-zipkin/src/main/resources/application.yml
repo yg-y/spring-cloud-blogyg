@@ -1,10 +1,9 @@
 spring:
   application:
     name: blogyg-server-zipkin
-  boot:
-    admin:
-      client:
-        url: http://blogyg:9002
+  profiles:
+    active: prod
+
 server:
   port: 8777
 
@@ -18,3 +17,14 @@ management:
     web:
       server:
         auto-time-requests: false
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
+logging:
+  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-zikpin\debug.log

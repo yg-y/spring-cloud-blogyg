@@ -1,12 +1,10 @@
 spring:
   application:
     name: blogyg-server-client
+  profiles:
+    active: prod
   zipkin:
     base-url: http://blogyg:8777
-  boot:
-    admin:
-      client:
-        url: http://blogyg:9002
 
 server:
   port: 8444
@@ -16,19 +14,27 @@ eureka:
     serviceUrl:
       defaultZone: http://blogyg:8111/eureka/
 
-# admin的log选项卡用
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
 logging:
-  file: /data/logs/crm/${spring.application.name}.log
+  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-client\debug.log
 ---
 spring:
   application:
     name: blogyg-server-client
+  profiles:
+    active: prod
   zipkin:
     base-url: http://blogyg:8777
-  boot:
-    admin:
-      client:
-        url: http://blogyg:9002
+
 server:
   port: 8333
 
@@ -37,6 +43,15 @@ eureka:
     serviceUrl:
       defaultZone: http://blogyg:8111/eureka/
 
-# admin的log选项卡用
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
 logging:
-  file: /data/logs/crm/${spring.application.name}.log
+  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-client\debug.log
