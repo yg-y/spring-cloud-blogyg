@@ -23,3 +23,6 @@ gateway：
 
 ### blogyg-server-monitor
 > 服务监控 spring-boot-admin
+```
+支持日志实时监控
+```
