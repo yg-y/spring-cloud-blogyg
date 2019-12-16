@@ -1,7 +1,7 @@
 version: '2'
 services:
   blogyg-server-eureka:
-    image: harbor.blogyg.cn/blogyg-server-eureka
+    image: harbor.blogyg.cn/blogyg/blogyg-server-eureka
     restart: always
     ports:
       - "8111:8111"
