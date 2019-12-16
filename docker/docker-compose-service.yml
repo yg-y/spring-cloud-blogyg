@@ -1,0 +1,17 @@
+version: '2'
+services:
+  blogyg-server-eureka:
+    image: harbor.blogyg.com/blogyg-server-eureka
+    restart: always
+    ports:
+      - "8111:8111"
+#    environment:
+#      - spring.profiles.active=dev
+    volumes:
+      - /data/docker/logs/blogyg-server-eureka/:/opt/app/logs/blogyg-server-eureka/
+    networks:
+      - blogyg
+
+networks:
+  blogyg:
+    driver: bridge
