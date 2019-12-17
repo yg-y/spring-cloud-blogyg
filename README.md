@@ -26,3 +26,23 @@ gateway：
 ```
 支持日志实时监控
 ```
+
+# 部署方式
+> 使用docker push到私有镜像仓库 harbor，docker-compose部署
+```text
+// 去到对应的模块，如blogyg-server-eureka
+cd blogyg-server-eureka
+
+// 使用maven打包并且构建docker镜像
+mvn clean package docker:build
+
+// 登录到私有仓库,已经登录过的忽略
+docker login xxxxx
+
+//push镜像到私有仓库
+docker push 构建的镜像名
+
+//等待push完成，去到服务器执行
+docker-compose -f xxx.yml up -d
+
+```
