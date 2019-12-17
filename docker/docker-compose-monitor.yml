@@ -4,7 +4,7 @@ services:
     image: harbor.blogyg.cn/blogyg/blogyg-server-monitor:v1.0.0
     restart: always
     ports:
-      - "9001:9001"
+      - "9002:9002"
 #    environment:
 #      - spring.profiles.active=dev
     volumes:
