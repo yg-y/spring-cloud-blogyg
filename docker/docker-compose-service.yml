@@ -10,7 +10,7 @@ services:
     volumes:
       - /data/docker/logs/blogyg-server-eureka/:/opt/app/logs/blogyg-server-eureka/
     extra_hosts:
-      - "blogyg:127.0.0.1"
+      - "blogyg:172.16.22.164"
     networks:
       - blogyg
 
@@ -24,7 +24,7 @@ services:
     volumes:
       - /data/docker/logs/blogyg-server-client/:/opt/app/logs/blogyg-server-client/
     extra_hosts:
-      - "blogyg:127.0.0.1"
+      - "blogyg:172.16.22.164"
     networks:
       - blogyg
 
