@@ -46,3 +46,20 @@ docker push 构建的镜像名
 docker-compose -f xxx.yml up -d
 
 ```
+> 基于Portainer的Docker容器管理部署更新停止等
+```text
+//安装Portainer docker.sock必须挂载出来，否则无法管理本地容器
+docker run -d -p 9000:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v /Users/lee/dev/docker_file/portainer/data:/data docker.io/portainer/portainer
+//第一次登陆需要设置账号密码
+//创建账号完成后，选择模式，可以选择本地（适合单机管理）和集群（多机管理容器）模式
+```
+![微信图片_20191218103152.png](https://i.loli.net/2019/12/18/Jk9R1waZvxbpUT2.png)
+```
+//之后选择Stacks->add Stacks
+//将你的docker-compose文件内容复制进去，也可以通过上传等其他方式
+//之后点击deploy the stack执行这个配置
+```
+![微信图片_20191218103521.png](https://i.loli.net/2019/12/18/spBHSQJY2ziX4jD.png)
+```
+//之后就能进 stacks 里面对容器进行一系列的管理
+```
