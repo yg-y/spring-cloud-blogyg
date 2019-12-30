@@ -19,12 +19,24 @@ done
 
 echo -e "\033[34m You have selected $app \033[0m"
 
-# 切换目录
-cd $app
+select confirm in "YES" "NO"; do
+    break;
+done
 
-#执行打包
-mvn clean package docker:build
+if [ $confirm  = "YES" ]; then
+    echo -e "确定编译并推送吗? $confirm"
 
-docker push harbor.blogyg.cn/blogyg/$app:v1.0.0
+    # 切换目录
+    cd $app
 
-echo -e "push docker images : harbor.blogyg.cn/blogyg/$app:v1.0.0"
+    #执行打包
+    mvn clean package docker:build
+
+    docker push harbor.blogyg.cn/blogyg/$app:v1.0.0
+
+    echo -e "push docker images : harbor.blogyg.cn/blogyg/$app:v1.0.0"
+else
+    echo -e "取消编译并推送"
+fi
+
+
