@@ -17,14 +17,13 @@ select app in "blogyg-server-eureka" "blogyg-server-client" "blogyg-server-gatew
   break;
 done
 
-echo -e "\033[34m You have selected $app \033[0m"
+echo -e "\033[34m 确定编译并推送: $app ?\033[0m"
 
 select confirm in "YES" "NO"; do
     break;
 done
 
 if [ $confirm  = "YES" ]; then
-    echo -e "确定编译并推送吗? $confirm"
 
     # 切换目录
     cd $app
