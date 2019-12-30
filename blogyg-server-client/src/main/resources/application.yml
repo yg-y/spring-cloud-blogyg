@@ -26,7 +26,7 @@ management:
 # spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
 logging:
 #  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-client\debug.log
-  file: /data/docker/logs/blogyg-server-client/debug.log
+  file: /logs/blogyg-server-client/debug.log
 ---
 #spring:
 #  application:
