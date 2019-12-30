@@ -8,7 +8,7 @@ services:
 #    environment:
 #      - spring.profiles.active=dev
     volumes:
-      - /data/docker/logs/blogyg-server-eureka/:/opt/app/logs/blogyg-server-eureka/
+      - /data/docker/logs/blogyg-server-eureka/:/logs/blogyg-server-eureka/
     extra_hosts:
       - "blogyg:172.16.22.164"
     networks:
@@ -22,7 +22,7 @@ services:
     #    environment:
     #      - spring.profiles.active=dev
     volumes:
-      - /data/docker/logs/blogyg-server-client/:/opt/app/logs/blogyg-server-client/
+      - /data/docker/logs/blogyg-server-client/:/logs/blogyg-server-client/
     extra_hosts:
       - "blogyg:172.16.22.164"
     networks:
