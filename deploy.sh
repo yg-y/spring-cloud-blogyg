@@ -13,7 +13,9 @@ else
 fi
 
 echo -e "\033[31m2.请选择需要编译并推送镜像的项目 \033[0m"
-select app in "blogyg-server-eureka" "blogyg-server-client" "blogyg-server-gateway" "blogyg-server-feign" "blogyg-server-ribbon" "blogyg-server-zuul" "blogyg-server-zipkin" "blogyg-server-monitor"; do
+select app in "blogyg-server-eureka" "blogyg-server-client" "blogyg-server-gateway" "blogyg-server-feign" \
+"blogyg-server-ribbon" "blogyg-server-zuul" "blogyg-server-zipkin" "blogyg-server-monitor" "auth-security-server" "auth-security-client" \
+; do
   break;
 done
 
