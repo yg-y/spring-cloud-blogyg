@@ -25,6 +25,9 @@
         <module>blogyg-server-gateway</module>
         <module>blogyg-server-zipkin</module>
         <module>blogyg-server-monitor</module>
+        <module>auth-security-server</module>
+        <module>auth-security-client</module>
+        <module>auth-security-common</module>
     </modules>
 
     <dependencyManagement>
@@ -43,28 +46,30 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <spring.boot.admin.vsersion>2.0.4</spring.boot.admin.vsersion>
+        <redis.clients>2.9.0</redis.clients>
+        <spring.data.redis>2.1.11.RELEASE</spring.data.redis>
     </properties>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- defined in spring-cloud-starter-parent pom (as documentation hint),
-                    but needs to be repeated here -->
-                <configuration>
-                    <requiresUnpack>
-                        <dependency>
-                            <groupId>com.netflix.eureka</groupId>
-                            <artifactId>eureka-core</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.netflix.eureka</groupId>
-                            <artifactId>eureka-client</artifactId>
-                        </dependency>
-                    </requiresUnpack>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--&lt;!&ndash; defined in spring-cloud-starter-parent pom (as documentation hint),-->
+            <!--but needs to be repeated here &ndash;&gt;-->
+            <!--<configuration>-->
+            <!--<requiresUnpack>-->
+            <!--<dependency>-->
+            <!--<groupId>com.netflix.eureka</groupId>-->
+            <!--<artifactId>eureka-core</artifactId>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>com.netflix.eureka</groupId>-->
+            <!--<artifactId>eureka-client</artifactId>-->
+            <!--</dependency>-->
+            <!--</requiresUnpack>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>

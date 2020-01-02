@@ -3,7 +3,16 @@ spring:
     name: blogyg-server-eureka
   zipkin:
     base-url: http://blogyg:8777
+  security:
+    user:
+      name: blogyg
+      password: blogyg
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 server:
   port: 8111

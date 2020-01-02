@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: auth-security-server
+  profiles:
+    active: prod
+  zipkin:
+    base-url: http://blogyg:8777
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+server:
+  port: 2111
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://blogyg:8111/eureka/
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'

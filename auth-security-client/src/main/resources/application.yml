@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: auth-security-client
+  profiles:
+    active: prod
+  zipkin:
+    base-url: http://blogyg:8777
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+server:
+  port: 2222
+
+security:
+  oauth2:
+    client:
+      clientId: blogyg
+      clientSecret: blogyg
+      userAuthorizationUri: http://localhost:2111/oauth/authorize
+      grant-type: password
+      scope: server
+      access-token-uri: http://localhost:2111/oauth/token
+    resource:
+      userInfoUri: http://localhost:2111/user
+    authorization:
+      check-token-access: http://localhost:2111/oauth/check_token
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://blogyg:8111/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
+logging:
+#  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-client\debug.log
+  file: /logs/blogyg-server-client/debug.log
+---
+#spring:
+#  application:
+#    name: blogyg-server-client
+#  profiles:
+#    active: prod
+#  zipkin:
+#    base-url: http://blogyg:8777
+#
+#server:
+#  port: 8333
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://blogyg:8111/eureka/
+#
+#management:
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#
+## spring-boot-admin监控日志，需要填写绝对路径，暂时不清楚怎么能通过相对路径获取日志文件
+#logging:
+#  file: C:\Users\young\IdeaProjects\spring-cloud-blogyg\logs\blogyg-server-client\debug.log

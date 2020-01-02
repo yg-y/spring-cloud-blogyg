@@ -20,13 +20,32 @@ gateway：
 ### blogyg-server-zipkin
 > 链路追踪
 
-
 ### blogyg-server-monitor
 > 服务监控 spring-boot-admin
 ```
 支持日志实时监控
 ```
+---
+## Spring Cloud Security Oauth2 Demo
+- 只整合了gateway网关，zuul不做整合
+### auth-security-server
+> 授权服务 spring security oauth2
+```text
+1.使用RedisTokenStore管理token
+2.client_id、secret使用内存方式，写死在代码
+```
 
+### auth-security-client
+> 资源服务
+```text
+spring security 资源服务示例
+```
+### auth-security-common
+> 授权服务公共类，需要鉴权的服务引入这个模块即可
+```text
+spring security 资源鉴权公共模块配置
+```
+---
 # 部署方式
 > 使用docker push到私有镜像仓库 harbor，docker-compose部署
 ```text

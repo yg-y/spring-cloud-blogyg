@@ -12,6 +12,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+
   cloud:
     gateway:
       #忽略大小写
@@ -25,9 +26,11 @@ spring:
         #predicates可以指定匹配规则
         #Weight 代表路由分发的权重
         predicates:
-          - Path=/**
+          - Path=/clien/**
         # 限流过滤配置
         filters:
+        # 转发到对应服务时去掉第一个宏,最多5个字符，超过会报404
+        - StripPrefix=1
         - name: RequestRateLimiter
           args:
             #redis-rate-limiter.replenishRate：允许用户每秒处理多少个请求
@@ -42,6 +45,25 @@ spring:
             name: default
             fallbackUri: 'forward:/defaultfallback'
         # hystrix 信号量隔离，6秒后自动超时
+      - id: auth-security-server
+        uri: lb://auth-security-server
+        #predicates可以指定匹配规则
+        #Weight 代表路由分发的权重
+        predicates:
+          - Path=/auth/**
+        # 限流过滤配置
+        filters:
+        - StripPrefix=1
+      - id: auth-security-client
+        uri: lb://auth-security-client
+        #predicates可以指定匹配规则
+        #Weight 代表路由分发的权重
+        predicates:
+          - Path=/res/**
+        # 限流过滤配置
+        filters:
+        - StripPrefix=1
+
 hystrix:
   command:
     default:
