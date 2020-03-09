@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: blogyg-server-client
+  cloud:
+    alicloud:
+      acm:
+        server-list: www.blogyg.cn
+        server-port: 8848
+
+  port: 8444
+
