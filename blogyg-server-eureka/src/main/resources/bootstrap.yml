@@ -7,8 +7,8 @@ spring:
         server-mode: edas
         endpoint: acm.aliyun.com
         group: DEVELOP_GROUP
-        namespace: 332f86d1-0184-46e9-aee9-1ff919c42a7b
-      access-key: LTAI4Fp1JRHd9o7KpuB1NbRC
-      secret-key: L7aUEcB9i4m0Ih9FJlNwqfnPadWxv5
+        namespace: 332f86d1-0184-46e9-aee9-1ff919c42a7ba
+      access-key: LTAI4Fp1JRHd9o7KpuB1NbRCA
+      secret-key: L7aUEcB9i4m0Ih9FJlNwqfnPadWxv5A
 server:
   port: 8111
