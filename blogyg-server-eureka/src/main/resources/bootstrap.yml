@@ -10,5 +10,6 @@ spring:
         namespace: 332f86d1-0184-46e9-aee9-1ff919c42a7ba
       access-key: LTAI4Fp1JRHd9o7KpuB1NbRCA
       secret-key: L7aUEcB9i4m0Ih9FJlNwqfnPadWxv5A
+
 server:
   port: 8111
