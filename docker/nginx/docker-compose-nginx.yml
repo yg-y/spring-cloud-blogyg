@@ -1,10 +1,10 @@
 version: '2'
 services:
-  sdk-file-nginx:
+  nginx:
     image: nginx
     restart: always
     ports:
-      - "6060:6060"
+      - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - /home/nginx/html/:/home/nginx/html/
