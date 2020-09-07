@@ -1,0 +1,18 @@
+version: '2'
+services:
+  sdk-file-nginx:
+    image: nginx
+    restart: always
+    ports:
+      - "6060:6060"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /home/nginx/html/:/home/nginx/html/
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - blogyg
+
+networks:
+  blogyg:
+    driver: bridge
