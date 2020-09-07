@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - /home/nginx/html/:/home/nginx/html/
+      - /data/nginx/html/:/data/nginx/html/
     environment:
       - TZ=Asia/Shanghai
     networks:
