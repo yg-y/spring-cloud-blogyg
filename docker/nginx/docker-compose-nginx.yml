@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - /data/nginx/html/:/data/nginx/html/
+      - /data/nginx/yg-y.github.io/:/data/nginx/yg-y.github.io/
     environment:
       - TZ=Asia/Shanghai
     networks:
