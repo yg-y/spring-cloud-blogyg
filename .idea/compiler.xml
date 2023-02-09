@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="blogyg-server-eureka" />
+        <module name="blogyg-server-client" />
+        <module name="auth-security-client" />
+        <module name="blogyg-server-feign" />
+        <module name="blogyg-server-zuul" />
+        <module name="blogyg-server-ribbon" />
+        <module name="alibaba-cloud-client" />
+        <module name="blogyg-server-gateway" />
+        <module name="blogyg-server-monitor" />
+        <module name="auth-security-server" />
+        <module name="auth-security-common" />
+        <module name="blogyg-server-zipkin" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="alibaba-cloud-client" options="-parameters" />
+      <module name="auth-security-client" options="-parameters" />
+      <module name="auth-security-common" options="-parameters" />
+      <module name="auth-security-server" options="-parameters" />
+      <module name="blogyg-alibaba-cloud" options="" />
+      <module name="blogyg-server-client" options="-parameters" />
+      <module name="blogyg-server-eureka" options="-parameters" />
+      <module name="blogyg-server-feign" options="-parameters" />
+      <module name="blogyg-server-gateway" options="-parameters" />
+      <module name="blogyg-server-monitor" options="-parameters" />
+      <module name="blogyg-server-ribbon" options="-parameters" />
+      <module name="blogyg-server-zipkin" options="-parameters" />
+      <module name="blogyg-server-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

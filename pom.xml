@@ -28,6 +28,7 @@
         <module>auth-security-server</module>
         <module>auth-security-client</module>
         <module>auth-security-common</module>
+        <module>blogyg-alibaba-cloud</module>
     </modules>
 
     <dependencyManagement>
